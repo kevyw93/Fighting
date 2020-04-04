@@ -5,6 +5,7 @@ import Player from './player';
 class Main {
   constructor(name){
     this.name = name;
+    this.setupBackground();
   }
 
   setupBackground(){
@@ -12,18 +13,22 @@ class Main {
     background.id = "fightingBackground"
     background.height = "500";
     background.width = "500";
-    background.style = "background-image: url('https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/2503094/910/607/m1/fpnw/wm1/game_background_130-.jpg?1491389381&s=c08b3be2ed8bea1644e27c7977de25cb'); background-repeat: no-repeat;";
+    background.style = "background-color: yellow;"
     document.body.appendChild(background);
+    // const background = document.getElementById('canvas-container');
+    // console.log(background)
+    // background.style.height = "500px";
+    // background.style.width = "500px";
+    // background.style.backgroundColor = "blue";
   }
 
   setupPlayer(){
-    this.player = new Player("Kevin", {x: 0, y: 0});
-    this.player.render();
-    document.addEventListener("onkeypress", this.player.movement.bind(this))
+    this.player = new Player("Kevin");
+    // this.player.render();
   }
 
   render(){
-    this.setupBackground();
+    // this.setupBackground();
     this.setupPlayer();
   }
 
